@@ -14,7 +14,7 @@ from config import (
   MACHINE_NAME,
   FREQUENCY,
 )
-from monitoring.monitoring import Monitoring
+from monitoring import Monitoring
 from monitoring.config import MonitoringConfig
 
 def main():
