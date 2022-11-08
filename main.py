@@ -14,7 +14,7 @@ from config import (
   MACHINE_NAME,
   FREQUENCY,
 )
-from monitoring import Monitoring
+from monitoring import monitoring
 from monitoring.config import MonitoringConfig
 
 def main():
@@ -59,7 +59,7 @@ if __name__ == '__main__':
     db_secret_access_key=DB_SECRET_ACCESS_KEY,
     frequency=FREQUENCY,
   )
-  _monitoring = Monitoring(monitoring_config)
+  _monitoring = monitoring.Monitoring(monitoring_config)
   _monitoring.register('passive')
 
   main(_monitoring)
