@@ -14,10 +14,9 @@ from config import (
   MACHINE_NAME,
   FREQUENCY,
 )
-from monitoring.monitoring import Monitoring
-from monitoring.config import MonitoringConfig
+from monitoring import Monitoring, MonitoringConfig
 
-def main():
+def main(_monitoring):
   L = instaloader.Instaloader()
   L.login(USERNAME, PASSWORD)
 
