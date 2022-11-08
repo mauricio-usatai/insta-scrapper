@@ -16,7 +16,7 @@ from config import (
 )
 from monitoring import Monitoring, MonitoringConfig
 
-def main():
+def main(_monitoring):
   L = instaloader.Instaloader()
   L.login(USERNAME, PASSWORD)
 
