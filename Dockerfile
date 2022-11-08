@@ -5,9 +5,9 @@ RUN python -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Install dependencies:
+RUN pip install --extra-index-url="http://pypi-registry:4000" --trusted-host=pypi-registry --no-cache-dir monitoring
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-RUN pip install --extra-index-url="http://192.168.0.174:4000" monitoring
 RUN mkdir -p /app/files
 
 # Run the application:
