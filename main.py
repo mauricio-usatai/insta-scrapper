@@ -49,7 +49,7 @@ def main():
     pass
 
 if __name__ == '__main__':
-  monitoring_config = monitoring.config.MonitoringConfig(
+  monitoring_config = monitoring.MonitoringConfig(
     _type='passive',
     name=APP_NAME,
     machine=MACHINE_NAME,
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     db_secret_access_key=DB_SECRET_ACCESS_KEY,
     frequency=FREQUENCY,
   )
-  _monitoring = monitoring.monitoring.Monitoring(monitoring_config)
+  _monitoring = monitoring.Monitoring(monitoring_config)
   _monitoring.register('passive')
 
   main(_monitoring)
