@@ -7,9 +7,10 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 # Install dependencies:
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-RUN pip install --extra-index-url="http://192.168.0.174:4000" monitoring
 RUN mkdir -p /app/files
 
 # Run the application:
 COPY . .
+RUN pip install --index-url="http://host.docker.internal:4000" --trusted-host=host.docker.internal --no-cache-dir monitoring
+
 CMD ["python", "main.py"]
