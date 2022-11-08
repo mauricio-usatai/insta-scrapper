@@ -14,8 +14,7 @@ from config import (
   MACHINE_NAME,
   FREQUENCY,
 )
-from monitoring import monitoring
-from monitoring.config import MonitoringConfig
+import monitoring
 
 def main():
   L = instaloader.Instaloader()
@@ -50,7 +49,7 @@ def main():
     pass
 
 if __name__ == '__main__':
-  monitoring_config = MonitoringConfig(
+  monitoring_config = monitoring.config.MonitoringConfig(
     _type='passive',
     name=APP_NAME,
     machine=MACHINE_NAME,
@@ -59,7 +58,7 @@ if __name__ == '__main__':
     db_secret_access_key=DB_SECRET_ACCESS_KEY,
     frequency=FREQUENCY,
   )
-  _monitoring = monitoring.Monitoring(monitoring_config)
+  _monitoring = monitoring.monitoring.Monitoring(monitoring_config)
   _monitoring.register('passive')
 
   main(_monitoring)
